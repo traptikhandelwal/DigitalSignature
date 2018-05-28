@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<link rel = "stylesheet" href = "https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css"/>
+<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+<script src = "https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+<link rel="stylesheet" href="/css/smart.css" />
+<body>
+
+<div ng-app="myApp" ng-controller="myController">
+
+<!-- Home Screen -->
+<div class="get-back">
+	<a href="smart3"> </a>
+</div>
+
+<div class="floating-opening-block-wrap" style="margin-top:2.5em;">
+	<div class="floating-opening-block-wrap-in clearfix">
+		<div class="floating-opening-block-wrap-inL dealer-flagship">&nbsp;</div>
+		<div class="floating-opening-block-wrap-inR">
+			<div class="floating-opening-block-wrap-inR-inner"> <h1>License Scan</h1>
+			<h3>Please sacn your license to begin the progress</h3></div>
+		</div>
+	</div>
+</div>
+
+<div class="instruct-wrap"><img src="/img/license_instruction.png"/></div>
+<div class="manual-service-action">
+		<a href="detailsLicense">&nbsp;</a>
+	</div>
+
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('myController', function($scope) {
+    
+    $scope.fullName = function() {
+       alert("hi");
+    };
+});
+</script>
+
+</body>
+</html>

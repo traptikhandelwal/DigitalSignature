@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<link rel = "stylesheet" href = "https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css"/>
+<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+<script src = "https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+<link rel="stylesheet" href="/css/smart.css"/>
+<body>
+
+<div ng-app="myApp" ng-controller="myController">
+
+<!-- Home Screen -->
+<div class="get-back">
+	<a href="smart3"> </a>
+</div>
+
+<div class="app-body-inner">
+	<div class="app-body-top">
+		<h1> Customer Registration</h1>
+		<h2>Please choose your information to begin the process</h2>
+	</div>
+
+	<div class="register-block-wrap manual-reg add-manual-lg clearfix" style="padding: 0">
+		<form>
+			<div class="register-block-wrap-mid clearfix">
+				<div class="register-block-wrap-midL"><h3>First Name</h3></div>
+				<div class="register-block-wrap-midR"><input type="text" ng-model="firstName" name="" /></div>
+			</div>
+
+			<div class="register-block-wrap-mid clearfix">
+				<div class="register-block-wrap-midL"><h3>Last Name</h3></div>
+				<div class="register-block-wrap-midR"><input type="text" ng-model="lastName" /></div>
+			</div>
+			<div class="register-block-wrap-mid clearfix">
+				<div class="register-block-wrap-midL"><h3>City</h3></div>
+				<div class="register-block-wrap-midR"><input type="text" ng-model="city" name="" /></div>
+			</div>
+			<div class="register-block-wrap-mid clearfix">
+				<div class="register-block-wrap-midL"><h3>State</h3></div>
+				<div class="register-block-wrap-midR"><input type="text" ng-model="state" name="" /></div>
+			</div>
+			<div class="register-block-wrap-mid clearfix">
+				<div class="register-block-wrap-midL"><h3>Pin Code</h3></div>
+				<div class="register-block-wrap-midR"><input type="text" ng-model="pincode" name="" /></div>
+			</div>
+		</form>
+	</div>
+
+	<div class="manual-service-action" ng-click="setNameusingFactory()">
+		<a href="detailsManual">&nbsp;</a>
+	</div>
+
+</div>
+
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+
+app.factory("myFactory", function(){
+
+	var obj = {};
+	obj.name = '';
+	obj.setName = function(firstName){
+//	alert('factory');
+	obj.name = firstName; };
+	return obj;
+});
+
+app.controller('myController', function($scope, myFactory) {
+	$scope.firstName = "abc";
+	$scope.lastName = "xyz";
+	$scope.city = "Gurgaon";
+	$scope.state = "Haryana";
+	$scope.pincode = "122009";
+
+	$scope.setNameusingFactory = function(){
+		myFactory.setName($scope.firstName);
+	};
+});
+
+
+</script>
+
+</body>
+</html>

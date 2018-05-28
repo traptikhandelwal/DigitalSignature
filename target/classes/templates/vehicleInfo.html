@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<link rel = "stylesheet" href = "https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css" />
+<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+<script src = "https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+<link rel="stylesheet" href="/css/smart.css" />
+<body>
+
+<div ng-app="myApp" ng-controller="myController">
+
+<!-- Home Screen -->
+<div class="get-back">
+	<a href="detailsManual"> </a>
+</div>
+
+<div class="app-body-inner">
+	<div class="app-body-top">
+		<h1> Vehicle Information</h1>
+		<h2>Please enter your vechicle information.</h2>
+	</div>
+</div>
+
+<div class="register-block-wrap phone-email-collect clearfix">
+	<form>
+		<div class="register-block-wrap-mid clearfix">
+			<div class="register-block-wrap-midL"><h3>Year</h3></div>
+			<div class="register-block-wrap-midR"><input type="text" ng-model = "year" name="" /></div>
+		</div>
+		<div class="register-block-wrap-mid clearfix">
+			<div class="register-block-wrap-midL"><h3>Make</h3></div>
+			<div class="register-block-wrap-midR"><input type="text" ng-model = "make" name="" /></div>
+		</div>
+		<div class="register-block-wrap-mid clearfix">
+			<div class="register-block-wrap-midL"><h3>Model</h3></div>
+			<div class="register-block-wrap-midR"><input type="text" ng-model = "model" name="" /></div>
+		</div>
+
+		<div class="register-block-wrap-mid clearfix">
+			<div class="register-block-wrap-midL"><h3>Mileage</h3></div>
+			<div class="register-block-wrap-midR"><input type="text" ng-model = "mileage" name="" /></div>
+		</div>
+		
+	</form>
+</div>
+
+<div class="manual-service-action" >
+		<a href="servicesrecommended">&nbsp;</a>
+	</div>
+
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('myController', function($scope, $http) {
+	$scope.year = 2018;
+	$scope.make = "TATA";
+	$scope.model = "Hexa";
+	$scope.mileage = 8800;
+
+
+});
+
+</script>
+
+</body>
+</html>

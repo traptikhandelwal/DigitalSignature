@@ -1,0 +1,3 @@
+Value|12.99|Perform full Synthetic lube, oil and filter change Service|Electronic system Performance and Battery Diagonistic|Install Fuel System Treatment|Rotate Tires and Reset Tire Pressure
+Recommended|89.99|Perform semi Synthetic lube, oil and filter change Service|Electronic system Performance and Battery Diagonistic|Rotate Tires and Reset Tire Pressure|Perform Brake Inspection and Cleaning
+Basic|69.99|Perform semi Synthetic lube, oil and filter change Service|Inspect Windshield Wipers for Wear or Cracking|Rotate Tires and Reset Tire Pressure|Perform Brake Inspection and Cleaning

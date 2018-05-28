@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<link rel = "stylesheet" href = "https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css"/>
+<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+<script src = "https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+<link rel="stylesheet" href="/css/smart.css" />
+<body>
+
+<div ng-app="myApp" ng-controller="myController">
+
+<div class="rapid-search">
+	 <div class="rapid-lead">
+		<h1> APPOINTMENT SEARCH </h1>
+	</div>
+	 <form>
+		<label for="SEARCH">Search</label>
+		<input type="text" placeholder="Search by last name..." name="" ng-model = "lastName1" />
+		<button type="submit" ng-click = "searchByLastName()"> GO! </button>
+	</form>
+
+</div>
+
+<!-- Home Screen -->
+<div class="get-back">
+	<a href="smart1"> </a>
+</div>
+
+<h3 style="display:none" id="DataNotFound">Data Not Found</h3>
+
+<div class="register-block-wrap manual-reg add-manual-lg clearfix" id="showResult" style="padding: 0;display: none">
+		<form>
+			<div class="register-block-wrap-mid clearfix">
+				<div class="register-block-wrap-midL"><h3>First Name</h3></div>
+				<div class="register-block-wrap-midR"><h3>{{firstName}}</h3></div>
+			</div>
+
+			<div class="register-block-wrap-mid clearfix">
+				<div class="register-block-wrap-midL"><h3>Last Name</h3></div>
+				<div class="register-block-wrap-midR"><h3>{{lastName}}</h3></div>
+			</div>
+			<div class="register-block-wrap-mid clearfix">
+				<div class="register-block-wrap-midL"><h3>ID</h3></div>
+				<div class="register-block-wrap-midR"><h3>{{Id}}</h3></div>
+			</div>
+			<div class="register-block-wrap-mid clearfix">
+				<div class="register-block-wrap-midL"><h3>Phone Number</h3></div>
+				<div class="register-block-wrap-midR"><h3>{{contact}}</h3></div>
+			</div>
+			<div class="register-block-wrap-mid clearfix">
+				<div class="register-block-wrap-midL"><h3>Organization</h3></div>
+				<div class="register-block-wrap-midR"><h3>{{Organization}}</h3></div>
+			</div>
+		</form>
+	</div>
+
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('myController', function($scope, $http) {
+	$scope.searchByLastName = function(){
+		$http({
+			method : "GET",
+			url : "http://localhost:8080/DigitalSignature/getCustomerDetail/"+$scope.lastName1,
+			transformRequest : angular.identity,
+//			transformResponse : [null],
+			headers : {'Content-Type' : undefined},
+		})
+		.then(function onSuccess(response){
+			CustomerData = response.data;
+			if(CustomerData.status == "DATA NOT FOUND"){
+				document.getElementById("showResult").style.display="none";
+				document.getElementById("DataNotFound").style.display='block';
+			}
+			else{
+			$scope.firstName = CustomerData["First Name"];
+			$scope.lastName = CustomerData["Last Name"];
+			$scope.Id = CustomerData["Id"];
+			$scope.Organization = CustomerData["Organization"];
+			$scope.contact = CustomerData["contact"];
+			document.getElementById("showResult").style.display="block";
+			document.getElementById("DataNotFound").style.display='none';
+			}
+			
+		}, function myError(resposnse){
+			console.log("error");
+		});
+	};
+
+});
+</script>
+
+</body>
+</html>

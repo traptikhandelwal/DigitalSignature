@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<link rel = "stylesheet" href = "https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css" />
+<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+<script src = "https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+<link rel="stylesheet" href="/css/smart.css" />
+<body>
+
+<div ng-app="myApp" ng-controller="myController">
+
+<!-- Home Screen -->
+<div class="get-back">
+	<a href="vehicleInfo.html"> </a>
+</div>
+
+<div class="app-body-inner">
+	<div class="app-body-top">
+		<h1> Recommended Services</h1>
+		<h2>Based on your vehicle we found the following services appropriate for you.</h2>
+	</div>
+</div>
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="column" style="background-color:#aaa;margin:2%;">
+    <h2>15,000 MILE {{UpsellCol1}}</h2>
+    <h3>{{mileage1}}</h3><hr/>
+    <p>{{Service1Col1}}</p>
+    <p>{{Service2Col1}}</p>
+    <p>{{Service3Col1}}</p>
+    <p>{{Service4Col1}}</p>
+    <center><input type="checkbox"/></center>
+  </div>
+  <div class="column" style="background-color:#bbb;margin:2%">
+    <h2>15,000 MILE {{UpsellCol2}}</h2>
+    <h3>{{mileage2}}</h3><hr/>
+    <p>{{Service1Col2}}</p>
+    <p>{{Service2Col2}}</p>
+    <p>{{Service3Col2}}</p>
+    <p>{{Service4Col2}}</p>
+    <center><input type="checkbox"/></center>
+  </div>
+  <div class="column" style="background-color:#ccc;margin:2%">
+    <h2>15,000 MILE {{UpsellCol3}}</h2>
+    <h3>{{mileage3}}</h3><hr/>
+    <p>{{Service1Col3}}</p>
+    <p>{{Service2Col3}}</p>
+    <p>{{Service3Col3}}</p>
+    <p>{{Service4Col3}}</p>
+    <center><input type="checkbox"/></center>
+  </div>
+	</div>
+</div>
+
+
+<div class="manual-service-action">
+		<a href="signature">&nbsp;</a>
+	</div>
+
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('myController', function($scope, $http) {
+			
+		$http({
+			method : "GET",
+	//		url : "http://192.168.2.131:8080/DigitalSignature/getRecommendedServices",
+			url : "http://localhost:8080/DigitalSignature/getRecommendedServices",
+			transformRequest : angular.identity,
+	//		transformResponse : [null],
+			headers : {'Content-Type' : undefined},
+		})
+		.then(function onSuccess(response){
+//			console.log("response is"+JSON.stringify(response.data));
+			test = response.data;
+			UpsellData = response.data;
+			$scope.UpsellCol1 = UpsellData[0]["Upsell_Category"];
+			$scope.UpsellCol2 = UpsellData[1]["Upsell_Category"];
+			$scope.UpsellCol3 = UpsellData[2]["Upsell_Category"];
+
+			$scope.mileage1 = UpsellData[0]["Value"];
+			$scope.mileage2 = UpsellData[1]["Value"];
+			$scope.mileage3 = UpsellData[2]["Value"];
+
+			$scope.Service1Col1 = UpsellData[0]["Service1"];
+			$scope.Service2Col1 = UpsellData[0]["Service2"];
+			$scope.Service3Col1 = UpsellData[0]["Service3"];
+			$scope.Service4Col1 = UpsellData[0]["Service4"];
+
+			$scope.Service1Col2 = UpsellData[1]["Service1"];
+			$scope.Service2Col2 = UpsellData[1]["Service2"];
+			$scope.Service3Col2 = UpsellData[1]["Service3"];
+			$scope.Service4Col2 = UpsellData[1]["Service4"]
+
+			$scope.Service1Col3 = UpsellData[2]["Service1"];
+			$scope.Service2Col3 = UpsellData[2]["Service2"];
+			$scope.Service3Col3 = UpsellData[2]["Service3"];
+			$scope.Service4Col3 = UpsellData[2]["Service4"];
+			
+
+		}, function myError(response){
+			console.log("error");
+			});
+});
+
+</script>
+
+</body>
+</html>

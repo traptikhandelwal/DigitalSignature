@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.9/angular.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+<!-- <script src="/js/myApp.js"></script> -->
+<script type="text/javascript" src="../js/myApp.js"></script>
+<link rel="stylesheet" href="/css/smart.css" />
+<body ng-app="myApp">
+  <div class="get-back">
+	<a href="vehicleInfo"></a>
+</div>
+<div  ng-controller="myCtrl" class="container" ><h3><b>Car Services</b></h3>
+			
+ 			<div class="row">
+				<div class="col-sm-9"></div>
+				<div class="col-sm-3" >
+				</div>
+				
+			</div>
+			<div class="row">
+					
+					<div class="col-sm-8">
+						<div  class="row"  ng-repeat="item in items">
+							<div   class="col-sm-3  card-colums">
+									<div class="card bg-light"> 
+										<div class="card-body text-center">
+											<p class="card-text">{{item.ServiceHeader}}</p>
+										</div>
+									</div>
+							    </div>
+
+							   	<div class="col-sm-6">{{item.Services}}</div>
+	    <div class="col-sm-3"><button ng-disabled="buttonSelected" ng-click="addToCart(item)" class="btn btn-default"><span class="badge  badge-dark">{{item.price |currency}}</span>Add To Cart</button>
+							    </div>
+		 					     
+						</div>
+								
+					</div>
+					<div class="col-sm-1"></div>
+					 <div class="col-sm-3" style="border:solid 1px;border-radius:5px;height:100%" ><h5 style="text-align:center;background:rgba(51, 165, 77, 0.58);">Cart</h5>
+					 		<div class="row"  ng-repeat="item in cartItemsArray">
+					 			<div class="col-sm-9" style="font:8px;">
+					 				{{item.Services}}<br/>{{item.price|currency}}
+					 			</div>
+					 			<div class="col-sm-3">
+					 				<button ng-click="deleteItem(item,$index)" class="btn btn-default"><span class="badge  badge-dark">X</span> 
+					 				</button>
+					 			</div>
+					 			 
+					 		</div>
+					 		<br/>
+					 </div>
+		</div>
+ 				
+				<div class="manual-service-action">
+		<a href="services">&nbsp;</a>
+	</div>
+	         
+	 </div>	
+	</body>
+	</html>

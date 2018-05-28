@@ -1,0 +1,159 @@
+<html>
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<div class="header" style="height:: 30%;">
+  <h1>Common Kiosk Platform</h1>
+</div>
+
+<div class="row" style="height: 70%; background-color: #0099cc" id="AppointmentID">
+
+<div class="col-3 menu">
+  <ul>
+    <li><center>Appointment ?</center></li>
+  </ul>
+</div>
+
+ <div class="col-3 flex-container" >
+     <div onclick="yesAppointment()" style="cursor: pointer;">YES</div>
+     <div onclick="noAppointment()" style="cursor: pointer;">NO</div>
+</div>
+
+</div>
+
+<div class="row" style="height: 70%; display: none; background-color: #0099cc" id="DetailsId">
+
+<div class="col-3 menu">
+  <ul>
+    <li><center>Details</center></li>
+  </ul>
+</div>
+
+ <div class="col-3 flex-container" >
+     <div onclick="phone()" style="cursor: pointer;">Phone</div>
+     <div onclick="Email()" style="cursor: pointer;">Email</div>
+     <div onclick="contact()" style="cursor: pointer;">Contact Preference</div>
+     <div onclick="mileage()" style="cursor: pointer;">Vehicle mileage</div>
+     <div onclick="valuation()" style="cursor: pointer;">Vehicle valuation</div>
+     
+</div>
+
+<div style="display: none;" id="phoneid2">
+Enter phone Number : <input type="text"  >
+</div>
+
+<div style="display: none;" id="emailid">
+Enter email Id : <input type="text" > 
+</div>
+
+<div style="display: none;" id="contactid">
+Enter contact id : <input type="text" > 
+</div>
+
+<div style="display: none;" id="mileageid">
+Enter Vehicle Mileage : <input type="text" > 
+</div>
+
+<div style="display: none;" id="valuationid">
+Enter Vehicle Valuation : <input type="text" > 
+</div>
+
+</div>
+
+
+<div class="row" style="height: 70%; display: none; background-color: #0099cc" id="CustomerID">
+
+<div class="col-3 menu">
+  <ul>
+    <li><center> Existing Customer ?</center></li>
+  </ul>
+</div>
+
+ <div class="col-3 flex-container" >
+     <div onclick="yesCustomer()" style="cursor: pointer;">YES</div>
+     <div onclick="noCustomer()" style="cursor: pointer;">NO</div>
+</div>
+<div style="display: none;" id="phoneID">
+Enter phone Number : <input type="text" name="phNo"> 
+&nbsp;&nbsp;Enter Last Name : <input type="text" name="lastName" placeholder="optional">
+</div>
+</div>
+
+<div class="footer" >
+  <p>Resize the browser window to see how the content respond to the resizing.</p>
+</div>
+
+</body>
+
+<script type="text/javascript">
+	
+	function noAppointment() {
+		// body...
+		document.getElementById('AppointmentID').style.display = 'none';
+		document.getElementById('CustomerID').style.display = 'block';
+	}
+
+	function yesCustomer() {
+		// body...
+		document.getElementById('phoneID').style.display = 'block';
+	}
+
+	function yesAppointment() {
+		// body...
+        document.getElementById('AppointmentID').style.display = 'none';
+        document.getElementById('CustomerID').style.display = 'none';
+   		document.getElementById('DetailsId').style.display = 'block';
+	}
+
+	function phone() {
+		// body...
+		document.getElementById('phoneid2').style.display = 'block';
+		document.getElementById('emailid').style.display = 'none';
+       document.getElementById('contactid').style.display = 'none';
+       document.getElementById('mileageid').style.display = 'none';
+       document.getElementById('valuationid').style.display = 'none';
+       
+	}
+
+	function Email() {
+		// body...
+		document.getElementById('phoneid2').style.display = 'none';
+		document.getElementById('emailid').style.display = 'block';
+        document.getElementById('contactid').style.display = 'none';
+        document.getElementById('mileageid').style.display = 'none';
+        document.getElementById('valuationid').style.display = 'none';
+       
+	}
+	function contact() {
+		// body...
+		document.getElementById('phoneid2').style.display = 'none';
+		document.getElementById('emailid').style.display = 'none';
+       document.getElementById('contactid').style.display = 'block';
+       document.getElementById('mileageid').style.display = 'none';
+       document.getElementById('valuationid').style.display = 'none';
+       
+	}
+	function mileage() {
+		// body...
+		document.getElementById('phoneid2').style.display = 'none';
+		document.getElementById('emailid').style.display = 'none';
+       document.getElementById('contactid').style.display = 'none';
+       document.getElementById('mileageid').style.display = 'block';
+       document.getElementById('valuationid').style.display = 'none';
+       
+	}
+	function valuation() {
+		// body...
+		document.getElementById('phoneid2').style.display = 'none';
+		document.getElementById('emailid').style.display = 'none';
+       document.getElementById('contactid').style.display = 'none';
+       document.getElementById('mileageid').style.display = 'none';
+       document.getElementById('valuationid').style.display = 'block';
+       
+	}
+
+</script>
+</html>

@@ -1,0 +1,257 @@
+.home-wrapper-logo-outer {
+    margin: 0% auto 0% auto;
+    width: 35%;
+    height: 215px;
+    background-image: url(../img/panauto.jpeg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.home-wrapper-action-button-large a {
+    display: block;
+    background-image: url(../img/checkIn.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 551px;
+}
+
+
+.get-back a {
+    display: block;
+    background-image: url(../img/back.jpeg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 60px;
+    height: 4.25em;
+    line-height: 2.25em;
+    text-align: center;
+    margin: 0 auto 0 auto;
+    padding: 0 0 0 25px;
+    text-decoration: none;
+}
+
+.app-body-inner {
+    width: 100%;
+}
+
+.app-body-top {
+    text-align: center;
+    padding: 3em 0 2em 0;
+    margin: 0 auto;
+}
+
+.home-wrapper-action-button {
+    float: left;
+    width: 48%;
+    margin: 0 1%;
+}
+
+.home-wrapper-action {
+    padding: 0;
+    margin: 0 auto;
+    width: 78%;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+.rapid-search {
+    width: 100%;
+    background: #333;
+    padding: 0;
+    text-align: center;
+    margin: 0 0 2.5em 0;
+    font-family: Antenna,Helvetica,sans-serif;
+    background-position: center center;
+    background-repeat: repeat;
+    border-bottom: 1px solid #ccc;
+}
+
+.rapid-lead {
+    text-align: center;
+    padding: 2em 0 1.5em 0;
+}
+
+.rapid-lead h1 {
+    font-weight: 900;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 2.30em;
+    /* text-shadow: 1px 2px 2px rgba(0,0,0,0.25); */
+    letter-spacing: .03em;
+    padding: 0em 0 0 0;
+}
+
+.rapid-search label {
+    position: absolute;
+    left: -9999px;
+}
+
+.rapid-search form {
+    display: inline-block;
+    margin: 0;
+    padding: 12px;
+    border: 0px solid #BAA994;
+    border-radius: 5px;
+    background: rgba(0,0,0,.2);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.16), 0 1px 3px rgba(0,0,0,0.13);
+    margin: 0 0 2em 0;
+}
+
+.rapid-search input {
+    border: 1px solid #bbb;
+    width: 230px;
+    height: 60px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    padding-left: 36px;
+    font-size: 16px;
+   /* background: #fff url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAaBAMAAABWeiG6AAAAA3NCS…N5zZR93uZ8GAp5FrWtf1n6SLRx/ZraN9JOTxR+3wPLVgJSfwffF4JRS32lAAAAAElFTkSuQmCC) no-repeat 5px;*/
+}
+
+.rapid-search button {
+    margin-left: -1px;
+    border: 1px solid #222222;
+    border-radius: 0 5px 5px 0;
+    padding-right: 13px;
+    padding-left: 13px;
+    height: 60px;
+    /* background: #1f1f1f; */
+    background: -moz-linear-gradient(top, #1f1f1f 0%, #101010 100%);
+    background: -webkit-linear-gradient(top, #1f1f1f 0%,#101010 100%);
+    background: linear-gradient(to bottom, #1f1f1f 0%,#101010 100%);
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+    text-shadow: 1px 2px 2px rgba(0,0,0,0.2);
+}
+
+.app-body-top h2 {
+    color: #269CD9;
+    font-family: 'Antenna';
+    text-align: center;
+    font-size: 1.25em;
+    line-height: 1.35em;
+    font-weight: normal;
+}
+
+.home-wrapper-action-button a img {
+    width: 100%; 
+}
+
+.register-block-wrap {
+    width: 90%;
+    max-width: 600px;
+    margin: 0em auto;
+    padding: 0 0 0 0;
+}
+
+.register-block-wrap-midL {
+    width: 25%;
+    float: left;
+}
+
+.register-block-wrap-midR {
+    width: 75%;
+    float: left;
+}
+
+.clearfix:before, .clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.manual-service-action {
+    padding: 1.5em 0;
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.manual-service-action a {
+    display: inline-block;
+    background-image: url(../img/next.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 75px;
+    height: 105px;
+    margin: 0 .5em;
+}
+
+.floating-opening-block-wrap {
+    width: 90%;
+    display: block;
+    margin: 0 auto;
+}
+
+.floating-opening-block-wrap-in {
+    width: 100%;
+    max-width: 485px;
+    margin: 0 auto 2em auto;
+    display: table;
+}
+
+.floating-opening-block-wrap-inL {
+    width: 25%;
+    background-color: #0C375E;
+    border-radius: 4px 0px 0px 4px;
+    border-right: 5px solid;
+    border-right-color: rgba(0,0,0,0.1);
+    display: table-cell;
+    background-image: url(../img/license_icon.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.floating-opening-block-wrap-inR {
+    width: 75%;
+    background: #f1f5f6;
+    background: -moz-linear-gradient(top, #f1f5f6 0%, #ffffff 100%);
+    background: -webkit-linear-gradient(top, #f1f5f6 0%,#ffffff 100%);
+    background: linear-gradient(to bottom, #f1f5f6 0%,#ffffff 100%);
+    display: table-cell;
+    border-left: 1px solid white;
+    border-radius: 0px 4px 4px 0px;
+}
+
+.instruct-wrap {
+    width: 90%;
+    margin: 0 auto 2em auto;
+}
+
+.instruct-wrap img {
+    width: 100%;
+    max-width: 550px;
+    display: block;
+    margin: 0 auto;
+}
+
+* {
+   box-sizing: border-box;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 29%;
+    padding: 10px;
+    height : 400px;
+  /* Should be removed. Only for demonstration */
+}
+
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+    }
+}
